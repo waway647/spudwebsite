@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        circe: ['Circe', 'sans-serif'], // Define Circe as a custom font family
+      },
+    },
   },
   plugins: [],
 }

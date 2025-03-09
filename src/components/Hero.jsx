@@ -1,24 +1,33 @@
-import React from "react"
-import { ReactTyped } from "react-typed";
+import React from 'react';
+import potatoImage from '../assets/spud.png'; // Replace with the actual path to your potato image
+import '../index.css';
 
 const Hero = () => {
+  return (
+    <section className="bg-[#FFFBF8] min-h-[80vh] flex items-center justify-center relative py-12 md:py-16">
+      {/* Text and Image Container */}
+      <div className="flex flex-col items-center justify-center relative w-full max-w-5xl px-4 md:px-8">
+        {/* FOUNDED IN Text */}
+        <h1 className="font-dela-gothic-one text-yellow-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase font-circe absolute top-0 left-4 sm:left-6 md:left-8">
+          FOUNDED IN
+        </h1>
 
-    return (
-        <div className="text-white">
-            <div className="max-w-[800px] mt-[-96px] h-screen mx-auto text-center flex flex-col justify-center">
-                <p className="text-[#00df9a] font-bold p-2">GROWING WITH DATA ANALYTICS</p>
-                <h1 className="md:text-7xl sm:text-6xl text-4xl font-bold md:py-6">Grow with data.</h1>
-                <div className="flex justify-center items-center">
-                    <p className="md:text-5xl sm:text-4xl text-xl font-bold py-3">Fast, flexible financing for</p>
-                    <ReactTyped className="md:text-5xl sm:text-4xl text-xl font-bold pl-2" strings={['BTB', 'BTC', 'SASS']} typeSpeed={120} backSpeed={140} loop/>
-                </div>
-                <p className="md:text-4xl sm:text-3xl text-xl font-bold py-3 text-gray-500">Monitor your data analytics to increase revenue for BTB, BTC, & SASS platforms.</p>
-                <button className="bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">Get Started</button>
-            </div>
+        {/* Potato Image */}
+        <div className="z-10 my-8 md:my-12">
+          <img
+            src={potatoImage}
+            alt="Loaded Baked Potato"
+            className="w-64 sm:w-80 md:w-96 lg:w-[600px] xl:w-[720px] h-auto"
+          />
         </div>
-        
-    )
-}
 
-export default Hero
+        {/* BUTUAN Text */}
+        <h2 className="font-dela-gothic-one text-yellow-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase font-circe absolute bottom-0 right-4 sm:right-6 md:right-8">
+          BUTUAN
+        </h2>
+      </div>
+    </section>
+  );
+};
 
+export default Hero;

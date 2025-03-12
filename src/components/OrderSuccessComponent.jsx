@@ -17,7 +17,7 @@ const OrderSuccessComponent = () => {
 
         {/* Back to Home Button */}
         <Link 
-          to="/"
+          to="/spudwebsite"
           className="inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors"
         >
           BACK TO HOME

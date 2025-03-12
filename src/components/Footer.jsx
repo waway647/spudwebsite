@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
           {/* Logo Section */}
           <div className="w-20">
-            <Link to="/">
+            <Link to="/spudwebsite">
               <img 
                 src={Logo} 
                 alt="Flavor 1" 

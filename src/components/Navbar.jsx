@@ -30,7 +30,7 @@ const Navbar = ({ toggleCart }) => {
     <nav className="bg-[#FFFBF8] p-4 flex items-center justify-between shadow-md font-circe overflow-visible relative">
       {/* Logo Section */}
       <div className="w-20">
-        <Link to="/">
+        <Link to="/spudwebsite">
           <img 
             src={Logo} 
             alt="Flavor 1" 
@@ -54,17 +54,17 @@ const Navbar = ({ toggleCart }) => {
         {/* Navigation Links (Centered) */}
         <div className="flex-1 flex justify-center">
           <div className="flex space-x-8">
-            <Link to="/"
+            <Link to="/spudwebsite"
               className="text-[#4B4B48] hover:text-[#2A2A28] transition"
             >
               HOME
             </Link>
-            <Link to="/our-spuds"
+            <Link to="/spudwebsite/our-spuds"
               className="text-[#4B4B48] hover:text-[#2A2A28] transition"
             >
               OUR SPUDS
             </Link>
-            <a href="/aboutus"
+            <a href="/spudwebsite/aboutus"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#4B4B48] hover:text-[#2A2A28] transition"
@@ -110,14 +110,14 @@ const Navbar = ({ toggleCart }) => {
               }`}
             >
               <Link
-                to="/login"
+                to="/spudwebsite/login"
                 className="text-[#4B4B48] hover:text-[#2A2A28] transition"
                 onClick={toggleUserLinks} // Hide links on click
               >
                 Login
               </Link>
               <Link
-                to="/signup"
+                to="/spudwebsite/signup"
                 className="text-[#4B4B48] hover:text-[#2A2A28] transition"
                 onClick={toggleUserLinks} // Hide links on click
               >
@@ -139,19 +139,19 @@ const Navbar = ({ toggleCart }) => {
       >
         {/* Navigation Links (Centered in dropdown) */}
         <div className="flex flex-col items-center space-y-2 mb-4">
-          <Link to="/"
+          <Link to="/spudwebsite"
             className="text-[#4B4B48] hover:text-[#2A2A28] transition py-2"
             onClick={toggleMenu} // Close menu on click
           >
             HOME
           </Link>
-          <Link to="/our-spuds"
+          <Link to="/spudwebsite/our-spuds"
             className="text-[#4B4B48] hover:text-[#2A2A28] transition py-2"
             onClick={toggleMenu} // Close menu on click
           >
             OUR SPUDS
           </Link>
-          <a href="/aboutus"
+          <a href="/spudwebsite/aboutus"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#4B4B48] hover:text-[#2A2A28] transition py-2"
@@ -197,7 +197,7 @@ const Navbar = ({ toggleCart }) => {
               }`}
             >
               <Link
-                to="/login"
+                to="/spudwebsite/login"
                 className="text-[#4B4B48] hover:text-[#2A2A28] transition"
                 onClick={() => {
                   toggleUserLinks();
@@ -207,7 +207,7 @@ const Navbar = ({ toggleCart }) => {
                 Login
               </Link>
               <Link
-                to="/signup"
+                to="/spudwebsite/signup"
                 className="text-[#4B4B48] hover:text-[#2A2A28] transition"
                 onClick={() => {
                   toggleUserLinks();

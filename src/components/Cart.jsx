@@ -70,7 +70,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, subtotal, onQuantityChange, onRem
             <span className="font-circe">SUBTOTAL</span>
             <span className="font-dela-gothic-one text-xl">₱{subtotal}</span>
           </div>
-          <Link to="/checkout">
+          <Link to="/spudwebsite/checkout">
             <button
               onClick={toggleCart} // Add onClick to close the cart
               className="w-full bg-black text-white py-4 rounded-full font-dela-gothic-one hover:bg-gray-800 transition-colors"

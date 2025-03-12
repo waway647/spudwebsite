@@ -55,7 +55,7 @@ const LoginComponent = () => {
         <div className="mt-8 text-center space-y-2">
           <p className="text-sm">
             New user?{' '}
-            <Link to="/signup" 
+            <Link to="/spudwebsite/signup" 
             className="text-yellow-600 hover:underline">
               Create an account
             </Link>

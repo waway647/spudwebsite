@@ -182,7 +182,7 @@ const CheckoutForm = () => {
           </div>
 
           {/* Place Order Button */}
-          <Link to="/ordersuccess">
+          <Link to="/spudwebsite/ordersuccess">
           <button className="w-full bg-yellow-400 py-4 rounded-lg font-bold hover:bg-yellow-500 transition">
             PLACE ORDER
           </button>

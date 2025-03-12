@@ -72,7 +72,7 @@ const SignupComponent2 = ({ onBack }) => {
         <div className="mt-8 text-center space-y-2">
           <p className="text-sm">
             Already have an account?{' '}
-            <Link to="/login" className="text-yellow-600 hover:underline">
+            <Link to="/spudwebsite/login" className="text-yellow-600 hover:underline">
               Sign in
             </Link>
           </p>

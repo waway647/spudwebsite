@@ -27,7 +27,7 @@ function App() {
       <Navbar toggleCart={toggleCart} />
       <Routes>
         <Route 
-          path="/" 
+          path="/spudwebsite" 
           element={
             <Home 
               isCartOpen={isCartOpen}
@@ -38,7 +38,7 @@ function App() {
           } 
         />
         <Route 
-          path="/our-spuds" 
+          path="/spudwebsite/our-spuds" 
           element={
             <OurSpuds 
               isCartOpen={isCartOpen}
@@ -49,7 +49,7 @@ function App() {
           } 
         />
         <Route 
-          path="/checkout" 
+          path="/spudwebsite/checkout" 
           element={
             <Checkout 
               isCartOpen={isCartOpen}
@@ -60,7 +60,7 @@ function App() {
           } 
         />
         <Route 
-          path="/login" 
+          path="/spudwebsite/login" 
           element={
             <Login 
               isCartOpen={isCartOpen}
@@ -71,7 +71,7 @@ function App() {
           } 
         />
         <Route 
-          path="/signup" 
+          path="/spudwebsite/signup" 
           element={
             <Signup 
               isCartOpen={isCartOpen}
@@ -82,7 +82,7 @@ function App() {
           } 
         />
         <Route 
-          path="/ordersuccess" 
+          path="/spudwebsite/ordersuccess" 
           element={
             <OrderSuccess 
               isCartOpen={isCartOpen}
@@ -93,7 +93,7 @@ function App() {
           } 
         />
         <Route 
-          path="/aboutus" 
+          path="/spudwebsite/aboutus" 
           element={
             <Aboutus 
               isCartOpen={isCartOpen}

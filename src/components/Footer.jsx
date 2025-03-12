@@ -1,12 +1,13 @@
 import React from 'react';
-// import Logo from '../assets/logo.svg'; // Replace with your logo path
+import { Link } from 'react-router-dom';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
     <footer className="bg-[#1A1A1A] text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Menu Section */}
           <div className="space-y-4">
             <h3 className="font-circe text-lg mb-4">MENU</h3>
@@ -67,11 +68,8 @@ const Footer = () => {
                 <input 
                   type="email" 
                   placeholder="ENTER EMAIL" 
-                  className="flex-1 px-4 py-2 rounded-full bg-gray-800 text-white placeholder-gray-400"
+                  className="flex-1 px-4 py-2 rounded-full bg-gray-800 text-white placeholder-gray-400 w-full"
                 />
-                <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors">
-                  →
-                </button>
               </div>
               <label className="flex items-center space-x-2 font-circe text-sm">
                 <input type="checkbox" className="rounded border-gray-400" />
@@ -83,10 +81,16 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
-          {/* Logo */}
-          <div className="text-xl font-bold">
-            <a href="/">LOGO</a>
-        </div>
+          {/* Logo Section */}
+          <div className="w-20">
+            <Link to="/">
+              <img 
+                src={Logo} 
+                alt="Flavor 1" 
+                className="w-full h-full object-cover"
+              />
+            </Link>
+          </div>
           {/* <div className="mb-4 md:mb-0">
             <img 
               src={Logo} 
@@ -97,7 +101,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="font-circe text-gray-400 text-sm">
-            © {new Date().getFullYear()} SPUD POTATO. All rights reserved.
+            © {new Date().getFullYear()} SPUDRADISE. All rights reserved.
           </p>
         </div>
       </div>

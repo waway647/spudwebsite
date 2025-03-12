@@ -64,13 +64,11 @@ const Navbar = ({ toggleCart }) => {
             >
               OUR SPUDS
             </Link>
-            <a href="/spudwebsite/aboutus"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link to="/spudwebsite/aboutus"
               className="text-[#4B4B48] hover:text-[#2A2A28] transition"
             >
               ABOUT US
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -151,14 +149,12 @@ const Navbar = ({ toggleCart }) => {
           >
             OUR SPUDS
           </Link>
-          <a href="/spudwebsite/aboutus"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link to="/spudwebsite/aboutus"
             className="text-[#4B4B48] hover:text-[#2A2A28] transition py-2"
             onClick={toggleMenu} // Close menu on click
           >
             ABOUT US
-          </a>
+          </Link>
         </div>
 
         {/* Icons Section (Centered in dropdown) */}

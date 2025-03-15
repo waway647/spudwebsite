@@ -1,10 +1,9 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Cart from '../components/Cart';
-import Products from '../components/Products'
+import Products from '../components/Products';
 
-function Ourspuds({ isCartOpen, toggleCart, cartItems, setCartItems }) {
-  // Remove local state here (keep only these calculations)
+function Ourspuds({ isCartOpen, toggleCart, cartItems, setCartItems, addToCart, products }) {
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleQuantityChange = (id, newQuantity) => {
@@ -21,7 +20,7 @@ function Ourspuds({ isCartOpen, toggleCart, cartItems, setCartItems }) {
 
   return (
     <div>
-      <Products />
+      <Products addToCart={addToCart} products={products} /> {/* Pass products to Products */}
       <Footer />
 
       {isCartOpen && (

@@ -7,8 +7,7 @@ import Preparation from '../components/Preparation';
 import Footer from '../components/Footer';
 import Cart from '../components/Cart';
 
-function Home({ isCartOpen, toggleCart, cartItems, setCartItems }) {
-  // Remove local state here (keep only these calculations)
+function Home({ isCartOpen, toggleCart, cartItems, setCartItems, products }) {
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleQuantityChange = (id, newQuantity) => {
@@ -27,7 +26,7 @@ function Home({ isCartOpen, toggleCart, cartItems, setCartItems }) {
     <div>
       <Hero />
       <Feature />
-      <Flavors />
+      <Flavors products={products} /> {/* Pass products to Flavors */}
       <Infographic />
       <Preparation />
       <Footer />

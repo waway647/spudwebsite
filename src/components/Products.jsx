@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import Spud from '../assets/spud.png'; // Import images
+import React, { useState, useRef } from 'react';
 import ProductModal from './ProductModal';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Products = () => {
+const Products = ({ addToCart, products }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const spuds = [
-    { name: "CHICKEN SPUD", price: "100 ₽", image: Spud },
-    { name: "BEEF SPUD", price: "100 ₽", image: Spud },
-    { name: "BACON SPUD", price: "100 ₽", image: Spud }
-  ];
+  const ref = useRef(null);
+  const isVisible = useIntersectionObserver(ref, { threshold: 0.2 });
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
@@ -19,48 +15,49 @@ const Products = () => {
     setSelectedProduct(null);
   };
 
-  
-
   return (
-    <div className="min-h-screen bg-[#FFFBF8] py-12 px-4 sm:px-6 lg:px-8">
+    <div
+      ref={ref}
+      className={`min-h-screen bg-[#FFFBF8] py-12 px-4 sm:px-6 lg:px-8 transition-opacity duration-700 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">Our Spuds</h1>
+        <h1 className={`text-4xl font-bold text-center mb-12 ${isVisible ? 'animate-fade-in-up' : ''}`}>
+          Our Spuds
+        </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {spuds.map((spud, index) => (
+          {products.map((spud, index) => (
             <div 
-              key={index}
-              className="border-2 border-gray-200 hover:border-yellow-400 transition-colors duration-100 cursor-pointer rounded-lg p-6"
+              key={spud.id} // Use id for uniqueness
+              className={`border-2 border-gray-200 hover:border-yellow-400 hover:shadow-xl transition-all duration-300 cursor-pointer rounded-lg p-6 ${
+                isVisible ? 'animate-scale-in' : ''
+              }`}
+              style={{ animationDelay: isVisible ? `${index * 200}ms` : '0ms' }}
               onClick={() => handleProductClick(spud)}
             >
               <div className="flex flex-col h-full">
-                {/* Product Image */}
-                <div className="w-full h-auto mb-4 rounded-lg">
+                <div className="w-full h-auto mb-4 rounded-lg overflow-hidden">
                   <img
                     src={spud.image}
                     alt={spud.name}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-
-                {/* Product Details */}
                 <div className="flex-grow">
                   <h2 className="text-xl font-bold uppercase mb-2">{spud.name}</h2>
-                  <p className="text-sm lowercase">potato</p>
-                  <div className="border-t border-gray-200 my-4"></div>
+                  <div className={`border-t border-gray-200 my-4 ${isVisible ? 'animate-[grow_0.5s_ease-out]' : ''}`}></div>
                 </div>
-
-                {/* Price */}
-                <p className="text-2xl font-bold text-right">{spud.price}</p>
+                <p className="text-2xl font-bold text-right">₱{spud.price}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Render ProductModal if a product is selected */}
       {selectedProduct && (
-        <ProductModal product={selectedProduct} onClose={handleCloseModal} />
+        <ProductModal product={selectedProduct} onClose={handleCloseModal} addToCart={addToCart} />
       )}
     </div>
   );

@@ -8,32 +8,61 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import OrderSuccess from './pages/OrderSuccess';
 import Aboutus from './pages/Aboutus';
+import Spud from './assets/spud.png'; // Import the image
 
 function App() {
-  // Move cart state to App component
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Spud Potato Original Flavor', price: 1000, quantity: 2, image: 'path/to/image' },
-    { id: 2, name: 'Spud Potato Spicy Flavor', price: 1000, quantity: 1, image: 'path/to/image' },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
-  // Cart toggle function
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
+
+  const addToCart = (product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.name === product.name);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.name === product.name ? { ...item, quantity: item.quantity + product.quantity } : item
+        );
+      }
+      return [...prevItems, product];
+    });
+  };
+
+  const onQuantityChange = (id, newQuantity) => {
+    if (newQuantity < 1) return;
+    setCartItems((prevItems) =>
+      prevItems.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item))
+    );
+  };
+
+  const onRemoveItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
+  // Define products here
+  const products = [
+    { id: 1, name: "CHICKEN SPUD", price: 100, image: Spud, description: "Sink your teeth into the savory delight of our Chicken Spud, where tender, juicy chicken meets perfectly crispy potatoes. Infused with a blend of herbs and spices, this flavor-packed treat offers a satisfying crunch and a taste that keeps you coming back for more!" },
+    { id: 2, name: "BEEF SPUD", price: 100, image: Spud, description: "Savor the hearty richness of our Beef Spud, a bold fusion of succulent beef and golden potatoes. Seasoned with robust flavors, this mouthwatering creation delivers a comforting, meaty bite that’s perfect for any meal or snack time craving." },
+    { id: 3, name: "BACON SPUD", price: 100, image: Spud, description: "Indulge in the smoky, irresistible allure of our Bacon Spud, where crispy bacon pairs flawlessly with crunchy potatoes. This decadent treat is seasoned just right, offering a burst of savory goodness that’s hard to resist—pure bliss in every bite!" },
+  ];
 
   return (
     <Router>
       <Navbar toggleCart={toggleCart} />
       <Routes>
         <Route 
-          path="/spudwebsite" 
+          path="/spudwebsite/" 
           element={
             <Home 
               isCartOpen={isCartOpen}
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
+              products={products} // Pass products to Home
             />
           } 
         />
@@ -45,6 +74,10 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
+              addToCart={addToCart}
+              products={products} // Pass products to OurSpuds
             />
           } 
         />
@@ -56,6 +89,8 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
             />
           } 
         />
@@ -67,6 +102,8 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
             />
           } 
         />
@@ -78,6 +115,8 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
             />
           } 
         />
@@ -89,6 +128,8 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
             />
           } 
         />
@@ -100,6 +141,8 @@ function App() {
               toggleCart={toggleCart}
               cartItems={cartItems}
               setCartItems={setCartItems}
+              onQuantityChange={onQuantityChange}
+              onRemoveItem={onRemoveItem}
             />
           } 
         />

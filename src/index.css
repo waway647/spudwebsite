@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #000300;
+  background-color: #FFFBF8;
 }
 
 @font-face {
@@ -27,4 +27,23 @@ body {
 
 .font-dela-gothic-one {
   font-family: 'DelaGothicOne', sans-serif;
+}
+
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }

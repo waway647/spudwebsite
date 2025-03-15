@@ -44,7 +44,7 @@ const Cart = ({ isOpen, toggleCart, cartItems, onQuantityChange, onRemoveItem })
                   <div className="flex flex-col justify-between h-full flex-1">
                     <div>
                       <h3 className="font-dela-gothic-one text-lg">{item.name}</h3>
-                      <p className="font-circe text-gray-600 text-sm mb-2">FLAVOR</p>
+                      <p className="font-circe text-gray-600 text-sm mb-2">WITH CHEESE</p>
                     </div>
 
                     {/* Quantity Controls */}

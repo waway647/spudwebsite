@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import FeatureImage from '../assets/feature.jpg';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
@@ -31,11 +32,11 @@ const Feature = () => {
             </p>
           </div>
           <hr className={`border-t-2 border-gray-300 w-full my-6 md:my-8 ${isVisible ? 'animate-[grow_0.5s_ease-out]' : ''}`} />
-          <a href="/spudwebsite/our-spuds">
+          <Link to="/spudwebsite/our-spuds">
             <button className={`font-dela-gothic-one bg-yellow-500 text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-lg hover:bg-yellow-600 hover:scale-105 transition-all duration-300 ${isVisible ? 'animate-fade-in-up animation-delay-400' : ''}`}>
               ORDER NOW!
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

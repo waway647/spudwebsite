@@ -47,6 +47,7 @@ const Products = ({ addToCart, products }) => {
                 </div>
                 <div className="flex-grow">
                   <h2 className="text-xl font-bold uppercase mb-2">{spud.name}</h2>
+                  <p>WITH CHEESE</p>
                   <div className={`border-t border-gray-200 my-4 ${isVisible ? 'animate-[grow_0.5s_ease-out]' : ''}`}></div>
                 </div>
                 <p className="text-2xl font-bold text-right">₱{spud.price}</p>

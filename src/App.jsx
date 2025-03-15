@@ -43,8 +43,8 @@ function App() {
 
   // Define products here
   const products = [
-    { id: 1, name: "CHICKEN SPUD", price: 100, image: Spud, description: "Sink your teeth into the savory delight of our Chicken Spud, where tender, juicy chicken meets perfectly crispy potatoes. Infused with a blend of herbs and spices, this flavor-packed treat offers a satisfying crunch and a taste that keeps you coming back for more!" },
-    { id: 2, name: "BEEF SPUD", price: 100, image: Spud, description: "Savor the hearty richness of our Beef Spud, a bold fusion of succulent beef and golden potatoes. Seasoned with robust flavors, this mouthwatering creation delivers a comforting, meaty bite that’s perfect for any meal or snack time craving." },
+    { id: 1, name: "BEANS SPUD", price: 100, image: Spud, description: "Sink your teeth into the savory delight of our Chicken Spud, where tender, juicy chicken meets perfectly crispy potatoes. Infused with a blend of herbs and spices, this flavor-packed treat offers a satisfying crunch and a taste that keeps you coming back for more!" },
+    { id: 2, name: "TUNA MAYO SPUD", price: 100, image: Spud, description: "Savor the hearty richness of our Beef Spud, a bold fusion of succulent beef and golden potatoes. Seasoned with robust flavors, this mouthwatering creation delivers a comforting, meaty bite that’s perfect for any meal or snack time craving." },
     { id: 3, name: "BACON SPUD", price: 100, image: Spud, description: "Indulge in the smoky, irresistible allure of our Bacon Spud, where crispy bacon pairs flawlessly with crunchy potatoes. This decadent treat is seasoned just right, offering a burst of savory goodness that’s hard to resist—pure bliss in every bite!" },
   ];
 

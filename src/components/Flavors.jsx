@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Flavors = ({ products }) => {
@@ -41,11 +42,11 @@ const Flavors = ({ products }) => {
               <p className="font-circe text-gray-600 mb-6">
               {flavor.description}
               </p>
-              <a href="/spudwebsite/our-spuds/">
+              <Link to="/spudwebsite/our-spuds/">
                 <button className="font-dela-gothic-one bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-600 hover:scale-110 transition-all duration-300">
                   Explore
                 </button>
-              </a> 
+              </Link> 
             </div>
           </div>
         ))}

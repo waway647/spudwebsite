@@ -157,6 +157,8 @@ const CheckoutForm = ({ cartItems }) => {
                     </div>
                     <div>
                       <h3 className="font-bold">{item.name}</h3>
+                      <p className="font-circe text-gray-600 text-sm mb-2">WITH CHEESE</p>
+                      <p className="font-circe text-gray-600 text-sm mb-2">(x {item.quantity})</p>
                     </div>
                   </div>
                   <p className="font-bold">₱{item.price * item.quantity}</p>
@@ -170,7 +172,7 @@ const CheckoutForm = ({ cartItems }) => {
               placeholder="COUPON CODE"
               className="w-full p-3 border rounded-lg mb-2 hover:border-yellow-400 transition-all duration-300"
             />
-            <button className="w-full bg-gray-200 p-2 rounded-lg hover:bg-gray-300 transition-all duration-300">
+            <button className="w-full bg-gray-200 p-2 rounded-lg hover:bg-gray-300 hover:scale-105 transition-all duration-300 disabled:opacity-50">
               APPLY
             </button>
           </div>
